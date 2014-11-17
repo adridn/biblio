@@ -53,7 +53,7 @@ namespace Biblio.Controllers
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(User.Identity.GetUserId()),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(User.Identity.GetUserId()),
-                Logins = await UserManager.GetLoginsAsync(User.Identity.GetUserId()),
+                //Logins = await UserManager.GetLoginsAsync(User.Identity.GetUserId()),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(User.Identity.GetUserId())
             };
             return View(model);
@@ -283,8 +283,8 @@ namespace Biblio.Controllers
             ViewBag.ShowRemoveButton = user.PasswordHash != null || userLogins.Count > 1;
             return View(new ManageLoginsViewModel
             {
-                CurrentLogins = userLogins,
-                OtherLogins = otherLogins
+                //CurrentLogins = userLogins,
+                //OtherLogins = otherLogins
             });
         }
 
