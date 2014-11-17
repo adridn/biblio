@@ -7,7 +7,7 @@
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
-@if (Model.CurrentLogins.Count > 0)
+@*@if (Model.CurrentLogins.Count > 0)
 {
     <h4>Connexions inscrites</h4>
     <table class="table">
@@ -38,8 +38,8 @@
             }
         </tbody>
     </table>
-}
-@if (Model.OtherLogins.Count > 0)
+}*@
+@*@if (Model.OtherLogins.Count > 0)
 {
     <h4>Ajoutez un autre service pour vous connecter.</h4>
     <hr />
@@ -54,6 +54,6 @@
             }
         </p>
         </div>
-    }
+    }*@
 }
 
