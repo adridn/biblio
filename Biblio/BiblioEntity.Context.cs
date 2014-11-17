@@ -29,6 +29,5 @@ namespace Biblio
         public virtual DbSet<Collections> Collections { get; set; }
         public virtual DbSet<Livre> Livre { get; set; }
         public virtual DbSet<Type_Auteur> Type_Auteur { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

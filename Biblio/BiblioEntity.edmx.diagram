@@ -9,7 +9,6 @@
         <EntityTypeShape EntityType="BiblioModel.Collections" Width="1.5" PointX="4.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BiblioModel.Livre" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BiblioModel.Type_Auteur" Width="1.5" PointX="2.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BiblioModel.sysdiagrams" Width="1.5" PointX="3.375" PointY="3.75" />
         <AssociationConnector Association="BiblioModel.FK__Auteur__id_TypeA__3F466844" />
         <AssociationConnector Association="BiblioModel.FK__Livre__id_Auteur__47DBAE45" />
         <AssociationConnector Association="BiblioModel.FK__Livre__id_Dessin__49C3F6B7" />
