@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Biblio.Livre>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_Auteur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_Collection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_Dessinateur)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_Auteur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_Collection)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_Dessinateur)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_Livre }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_Livre }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_Livre })
+        </td>
+    </tr>
+}
+
+</table>
