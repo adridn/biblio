@@ -4,23 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-
 namespace Biblio.ViewsModel
 {
-    public class LivreViewModel:Livre
+    public class SearchViewModel:Livre
     {
         public List<SelectListItem> listAuteur { get; set; }
         public List<SelectListItem> listCollection { get; set; }
         public List<SelectListItem> listDessinateur { get; set; }
-
-
-        public LivreViewModel()
+        public List<Livre> listLivre { get; set; }
+        public SearchViewModel()
         {
 
         }
 
-        public LivreViewModel(Livre livre)
-        {
+        public SearchViewModel(Livre livre)
+        {         
             this.Nom = livre.Nom;
             this.id_Auteur = livre.id_Auteur;
             this.id_Collection = livre.id_Collection;
@@ -30,5 +28,4 @@ namespace Biblio.ViewsModel
         }
 
     }
-
 }

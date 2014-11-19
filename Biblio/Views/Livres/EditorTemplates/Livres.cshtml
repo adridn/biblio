@@ -1,0 +1,24 @@
+﻿@model Biblio.Livre
+
+        @*<tr>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Auteur.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Collections.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Auteur.Nom)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.id_Livre }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_Livre }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_Livre })
+            </td>
+        </tr>*@
+ 
+@Html.DisplayFor(modelItem => modelItem.Nom)
+

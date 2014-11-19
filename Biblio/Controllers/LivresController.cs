@@ -8,12 +8,64 @@ using System.Web;
 using System.Web.Mvc;
 using Biblio;
 using Biblio.ViewsModel;
+using Biblio.Extension;
 
 namespace Biblio.Controllers
 {
     public class LivresController : Controller
     {
         private BiblioEntities db = new BiblioEntities();
+
+
+        //public ActionResult Search(string Rechercher)
+        //{
+        //    SearchViewModel svm = new SearchViewModel();
+        //    svm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).ToList();
+        //    if (Rechercher==null)
+        //    {
+        //        svm.listLivre = new List<Livre>();
+        //    }
+                
+        //    else
+        //    {
+        //        if (Tools.IsNumeric(Rechercher))
+        //            svm.listLivre = db.Livre.Where(x => x.id_Collection == int.Parse(Rechercher)).ToList();
+        //        else
+        //            svm.listLivre = db.Livre.Where(x => x.Nom.Contains(Rechercher)).ToList();
+        //    }
+
+                
+        //    return View(svm);
+        //}
+
+        public ActionResult Search()
+        {
+            SearchViewModel svm = new SearchViewModel();
+            svm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).ToList();
+
+            svm.listLivre = new List<Livre>();          
+
+            return View(svm);
+        }
+
+
+        [HttpPost]
+        public ActionResult Search(SearchViewModel svm)
+        {
+            
+                svm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).ToList();
+
+                if (string.IsNullOrEmpty(svm.Nom))
+                    svm.listLivre = db.Livre.Where(x => x.id_Collection == svm.id_Collection).ToList();
+                else
+                    svm.listLivre = db.Livre.Where(x => x.Nom.Contains(svm.Nom)).ToList();
+           
+            return View(svm);
+        }
+
+        //[HttpPost]
+        // GET: Livres
+       
 
         // GET: Livres
         public ActionResult Index()

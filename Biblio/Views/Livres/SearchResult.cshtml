@@ -1,0 +1,51 @@
+﻿@model Biblio.ViewsModel.SearchViewModel
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayName("Auteur")
+        </th>
+        <th>
+            @Html.DisplayName("Collection")
+        </th>
+        <th>
+            @Html.DisplayName("Dessinateur")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.listLivre)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auteur.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Collections.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auteur.Nom)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_Livre }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_Livre }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_Livre })
+            </td>
+        </tr>
+    }
+
+</table>
+

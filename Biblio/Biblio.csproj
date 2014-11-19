@@ -191,6 +191,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Type_Auteur1Controller.cs" />
     <Compile Include="Controllers\Type_AuteurController.cs" />
+    <Compile Include="Extension\Tools.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -207,6 +208,7 @@
     </Compile>
     <Compile Include="ViewsModel\CreateAuteurViewModel.cs" />
     <Compile Include="ViewsModel\LivreViewModel.cs" />
+    <Compile Include="ViewsModel\SearchViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -311,6 +313,9 @@
     <Content Include="Views\Type_Auteur1\Details.cshtml" />
     <Content Include="Views\Type_Auteur1\Edit.cshtml" />
     <Content Include="Views\Type_Auteur1\Index.cshtml" />
+    <Content Include="Views\Livres\Search.cshtml" />
+    <Content Include="Views\Livres\EditorTemplates\Livres.cshtml" />
+    <Content Include="Views\Livres\SearchResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
