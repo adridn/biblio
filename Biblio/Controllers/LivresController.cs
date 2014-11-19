@@ -16,28 +16,6 @@ namespace Biblio.Controllers
     {
         private BiblioEntities db = new BiblioEntities();
 
-
-        //public ActionResult Search(string Rechercher)
-        //{
-        //    SearchViewModel svm = new SearchViewModel();
-        //    svm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).ToList();
-        //    if (Rechercher==null)
-        //    {
-        //        svm.listLivre = new List<Livre>();
-        //    }
-                
-        //    else
-        //    {
-        //        if (Tools.IsNumeric(Rechercher))
-        //            svm.listLivre = db.Livre.Where(x => x.id_Collection == int.Parse(Rechercher)).ToList();
-        //        else
-        //            svm.listLivre = db.Livre.Where(x => x.Nom.Contains(Rechercher)).ToList();
-        //    }
-
-                
-        //    return View(svm);
-        //}
-
         public ActionResult Search()
         {
             SearchViewModel svm = new SearchViewModel();
@@ -63,8 +41,7 @@ namespace Biblio.Controllers
             return View(svm);
         }
 
-        //[HttpPost]
-        // GET: Livres
+        
        
 
         // GET: Livres
