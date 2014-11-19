@@ -17,7 +17,7 @@ namespace Biblio.Controllers
         // GET: Collections
         public ActionResult Index()
         {
-            return View(db.Collections.ToList());
+            return View(db.Collections.OrderBy(y => y.Nom).ToList());
         }
 
         // GET: Collections/Details/5

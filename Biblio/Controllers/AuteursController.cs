@@ -18,7 +18,7 @@ namespace Biblio.Controllers
         // GET: Auteurs
         public ActionResult Index()
         {
-            return View(db.Auteur.ToList());
+            return View(db.Auteur.OrderBy(y => y.Nom).ToList());
         }
 
         // GET: Auteurs/Details/5
@@ -40,7 +40,7 @@ namespace Biblio.Controllers
         public ActionResult Create()
         {
             CreateAuteurViewModel typeAuteur = new CreateAuteurViewModel();
-            typeAuteur.listTypeauteur = db.Type_Auteur.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_TypeAuteur.ToString() }).ToList();
+            typeAuteur.listTypeauteur = db.Type_Auteur.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_TypeAuteur.ToString() }).OrderBy(y => y.Text).ToList();
             return View(typeAuteur);
         }
 
@@ -77,7 +77,7 @@ namespace Biblio.Controllers
                 return HttpNotFound();
             }
             CreateAuteurViewModel typeAuteur = new CreateAuteurViewModel(auteur);
-            typeAuteur.listTypeauteur = db.Type_Auteur.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_TypeAuteur.ToString() }).ToList();
+            typeAuteur.listTypeauteur = db.Type_Auteur.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_TypeAuteur.ToString() }).OrderBy(y => y.Text).ToList();
             
 
             return View(typeAuteur);

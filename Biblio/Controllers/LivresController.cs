@@ -19,7 +19,7 @@ namespace Biblio.Controllers
         public ActionResult Search()
         {
             SearchViewModel svm = new SearchViewModel();
-            svm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).ToList();
+            svm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).OrderBy(y => y.Text).ToList();
 
             svm.listLivre = new List<Livre>();          
 
@@ -34,9 +34,9 @@ namespace Biblio.Controllers
                 svm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).ToList();
 
                 if (string.IsNullOrEmpty(svm.Nom))
-                    svm.listLivre = db.Livre.Where(x => x.id_Collection == svm.id_Collection).ToList();
+                    svm.listLivre = db.Livre.Where(x => x.id_Collection == svm.id_Collection).OrderBy(y=>y.Nom).ToList();
                 else
-                    svm.listLivre = db.Livre.Where(x => x.Nom.Contains(svm.Nom)).ToList();
+                    svm.listLivre = db.Livre.Where(x => x.Nom.Contains(svm.Nom)).OrderBy(y => y.Nom).ToList();
            
             return View(svm);
         }
@@ -47,7 +47,7 @@ namespace Biblio.Controllers
         // GET: Livres
         public ActionResult Index()
         {
-            return View(db.Livre.ToList());
+            return View(db.Livre.OrderBy(y => y.id_Collection).ThenBy(z => z.Nom).ToList());
         }
 
         // GET: Livres/Details/5
@@ -69,9 +69,9 @@ namespace Biblio.Controllers
         public ActionResult Create()
         {
             LivreViewModel lvm = new LivreViewModel();
-            lvm.listAuteur =  db.Auteur.Where(aut => aut.id_TypeAuteur==2).Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Auteur.ToString() }).ToList();
-            lvm.listDessinateur = db.Auteur.Where(aut => aut.id_TypeAuteur == 1).Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Auteur.ToString() }).ToList();
-            lvm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).ToList();
+            lvm.listAuteur = db.Auteur.Where(aut => aut.id_TypeAuteur == 2).Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Auteur.ToString() }).OrderBy(y => y.Text).ToList();
+            lvm.listDessinateur = db.Auteur.Where(aut => aut.id_TypeAuteur == 1).Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Auteur.ToString() }).OrderBy(y => y.Text).ToList();
+            lvm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).OrderBy(y => y.Text).ToList();
             return View(lvm);
         }
 
@@ -111,9 +111,9 @@ namespace Biblio.Controllers
                 return HttpNotFound();
             }
             LivreViewModel lvm = new LivreViewModel(livre);
-            lvm.listAuteur = db.Auteur.Where(aut => aut.id_TypeAuteur == 2).Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Auteur.ToString() }).ToList();
-            lvm.listDessinateur = db.Auteur.Where(aut => aut.id_TypeAuteur == 1).Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Auteur.ToString() }).ToList();
-            lvm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).ToList();
+            lvm.listAuteur = db.Auteur.Where(aut => aut.id_TypeAuteur == 2).Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Auteur.ToString() }).OrderBy(y => y.Text).ToList();
+            lvm.listDessinateur = db.Auteur.Where(aut => aut.id_TypeAuteur == 1).Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Auteur.ToString() }).OrderBy(y => y.Text).ToList();
+            lvm.listCollection = db.Collections.Select(sl => new SelectListItem { Text = sl.Nom, Value = sl.id_Collection.ToString() }).OrderBy(y => y.Text).ToList();
             
             return View(lvm);
         }

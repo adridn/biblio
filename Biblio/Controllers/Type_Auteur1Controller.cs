@@ -17,7 +17,7 @@ namespace Biblio.Controllers
         // GET: Type_Auteur1
         public ActionResult Index()
         {
-            return View(db.Type_Auteur.ToList());
+            return View(db.Type_Auteur.OrderBy(y => y.Nom).ToList());
         }
 
         // GET: Type_Auteur1/Details/5
