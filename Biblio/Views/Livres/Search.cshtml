@@ -1,0 +1,26 @@
+﻿
+@model Biblio.ViewsModel.SearchViewModel
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+
+    @using (Html.BeginForm("Search", "Livres"))
+    {
+        @Html.DisplayName("Collection à rechercher  ")
+        @Html.TextBoxFor(m => m.Nom)
+        @Html.DropDownListFor(m => m.id_Collection, Model.listCollection)
+        <input type="submit" value="Search" />
+    }
+
+
+
+</p>
+
+<div id="DivSearchResult">
+    @Html.Partial("SearchResult", Model)
+
+</div>

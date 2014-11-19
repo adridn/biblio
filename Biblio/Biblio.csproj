@@ -313,9 +313,9 @@
     <Content Include="Views\Type_Auteur1\Details.cshtml" />
     <Content Include="Views\Type_Auteur1\Edit.cshtml" />
     <Content Include="Views\Type_Auteur1\Index.cshtml" />
-    <Content Include="Views\Livres\Search.cshtml" />
     <Content Include="Views\Livres\EditorTemplates\Livres.cshtml" />
     <Content Include="Views\Livres\SearchResult.cshtml" />
+    <Content Include="Views\Livres\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
