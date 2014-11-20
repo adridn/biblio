@@ -13,14 +13,14 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>*@
+                </button>
                 @Html.ActionLink("Biblio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
@@ -31,21 +31,6 @@
                     <li>@Html.ActionLink("Menu Collection", "Index", "Collections")</li>
                     <li>@Html.ActionLink("À propos de", "About", "Home")</li>  
                     <li>@Html.ActionLink("Recherche", "Search", "Livres")</li> 
-                    @*<li class="text-info">
-                        @using (Html.BeginForm("Search", "Livres"))
-                        {
-                            <span  style="top:inherit">
-                                @Html.DisplayName("Titre à rechercher")
-                                @Html.TextBox("Rechercher")
-                                <input type="submit" value="Search" />
-                            </span>
-
-
-
-
-                        }
-                    </li>*@
-
                 </ul>                
             </div>
         </div>
