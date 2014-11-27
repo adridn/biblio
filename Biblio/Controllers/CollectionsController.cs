@@ -10,6 +10,7 @@ using Biblio;
 
 namespace Biblio.Controllers
 {
+    [Authorize]
     public class CollectionsController : Controller
     {
         private BiblioEntities db = new BiblioEntities();

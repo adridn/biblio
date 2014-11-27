@@ -10,8 +10,10 @@ using Biblio;
 
 namespace Biblio.Controllers
 {
+    [Authorize]
     public class Type_Auteur1Controller : Controller
     {
+        
         private BiblioEntities db = new BiblioEntities();
 
         // GET: Type_Auteur1
