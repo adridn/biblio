@@ -12,7 +12,7 @@ using Biblio.Extension;
 
 namespace Biblio.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class LivresController : Controller
     {
         private BiblioEntities db = new BiblioEntities();

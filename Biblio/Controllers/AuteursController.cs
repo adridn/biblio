@@ -11,7 +11,7 @@ using Biblio.ViewsModel;
 
 namespace Biblio.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AuteursController : Controller
     {
         private BiblioEntities db = new BiblioEntities();

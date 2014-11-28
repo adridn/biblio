@@ -10,7 +10,7 @@ using Biblio;
 
 namespace Biblio.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class Type_AuteurController : Controller
     {
         private BiblioEntities db = new BiblioEntities();

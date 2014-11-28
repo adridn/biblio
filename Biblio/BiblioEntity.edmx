@@ -37,6 +37,14 @@
           <Property Name="id_TypeAuteur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nom" Type="varchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+        </EntityType>
         <Association Name="FK__Auteur__id_TypeA__07F6335A">
           <End Role="Type_Auteur" Type="Self.Type_Auteur" Multiplicity="0..1" />
           <End Role="Auteur" Type="Self.Auteur" Multiplicity="*" />
@@ -90,6 +98,7 @@
           <EntitySet Name="Collections" EntityType="Self.Collections" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Livre" EntityType="Self.Livre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Type_Auteur" EntityType="Self.Type_Auteur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Auteur__id_TypeA__07F6335A" Association="Self.FK__Auteur__id_TypeA__07F6335A">
             <End Role="Type_Auteur" EntitySet="Type_Auteur" />
             <End Role="Auteur" EntitySet="Auteur" />
@@ -172,6 +181,7 @@
             <End Role="Collections" EntitySet="Collections" />
             <End Role="Livre" EntitySet="Livre" />
           </AssociationSet>
+          <EntitySet Name="UserProfile" EntityType="BiblioModel.UserProfile" />
         </EntityContainer>
         <Association Name="FK__Auteur__id_TypeA__3F466844">
           <End Type="BiblioModel.Type_Auteur" Role="Type_Auteur" Multiplicity="0..1" />
@@ -221,6 +231,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -260,6 +278,15 @@
               <MappingFragment StoreEntitySet="Type_Auteur">
                 <ScalarProperty Name="id_TypeAuteur" ColumnName="id_TypeAuteur" />
                 <ScalarProperty Name="Nom" ColumnName="Nom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfile">
+            <EntityTypeMapping TypeName="BiblioModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

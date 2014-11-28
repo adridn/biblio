@@ -206,6 +206,9 @@
     <Compile Include="Type_Auteur.cs">
       <DependentUpon>BiblioEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserProfile.cs">
+      <DependentUpon>BiblioEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewsModel\CreateAuteurViewModel.cs" />
     <Compile Include="ViewsModel\LivreViewModel.cs" />
     <Compile Include="ViewsModel\SearchViewModel.cs" />

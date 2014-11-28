@@ -47,6 +47,13 @@ namespace Biblio.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
+        
+        //[HttpPost]
+        //public ActionResult Login()
+        //{
+        //    ViewBag.ReturnUrl = returnUrl;
+        //    return View();
+        //}
 
         private ApplicationSignInManager _signInManager;
 
